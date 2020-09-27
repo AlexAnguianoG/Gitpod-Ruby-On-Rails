@@ -1,0 +1,22 @@
+<%= link_to "Back", url_for(:back), class:"links"  %> |
+<%= link_to "Users", users_path, class:"links"  %> |
+<%= link_to "Tweets", tweets_path, class:"links"  %>
+
+<h1 class="twitter"><%= @user.name %>'s Tweets</h1>
+
+
+<% @user.tweets.each do |tweet| %>
+    <br>
+    <section class="tweet">
+        <strong><%= link_to tweet.user.name, @user, class: "tweet-name" %></strong>
+        <p class="username">@<%= link_to tweet.user.username, @user, class: "tweet-username" %></p>
+        <br>
+        
+        <%= link_to tweet.text, tweet, class: "tweet-text" %>
+        
+        <br><br>
+    </section>
+<% end %>
+
+
+<br>

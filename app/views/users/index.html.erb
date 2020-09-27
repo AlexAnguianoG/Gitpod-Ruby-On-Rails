@@ -1,0 +1,13 @@
+<p id="notice"><%= notice%></p>
+<%= link_to "Back", url_for(:back), class:"links"  %> |
+<%= link_to "Tweets", tweets_path, class:"links"  %>
+
+<h1 class="twitter">Users</h1>
+
+<% @users.each do |user| %>
+    <%= link_to user.name, user, class:"users-name" %>
+    <p class="users-uname">@<%= link_to user.username, user, class:"users-uname" %></p>
+    <br>
+<% end %>
+
+<br>

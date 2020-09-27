@@ -1,0 +1,13 @@
+<%= link_to "Back", url_for(:back), class:"links" %> |
+<%= link_to "Users", users_path, class:"links"  %> |
+<%= link_to "Tweets", tweets_path, class:"links"  %>
+<h1 class="twitter">Tweet</h1>
+<br>
+<a class="name">
+    <strong><%= link_to @tweet.user.name, @tweet.user, class: "tweet-name" %></strong>
+    <p class="username">@<%= link_to @tweet.user.username, @tweet.user, class: "tweet-username" %></p>
+</a>
+<br>
+<p><%= @tweet.text %></p>
+<br>
+
